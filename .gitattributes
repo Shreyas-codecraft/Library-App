@@ -1,1 +1,2 @@
-# valid git attributes to be added here
+# proper line endings support for text files.
+* text=auto eol=lf 
