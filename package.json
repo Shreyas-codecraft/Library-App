@@ -1,0 +1,11 @@
+{
+  "name": "cc5-ds-algorithms",
+  "version": "1.0.0",
+  "description": "Repo that contains implementation of some data structures",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
