@@ -1,16 +1,17 @@
 import React from 'react';
-import styles from './{{pascalCase name}}.module.css';
+import styles from './{{pascalCase name}}.module.css'
+import "../../App.css"
+
 
 interface {{pascalCase name}}Props {
-  // Define your props here
+  {{!-- Define your props here --}}
 }
 
-const {{pascalCase name}}: React.FC<{{pascalCase name}}Props> = (props) => {
+export function {{pascalCase name}}(props:{{pascalCase name}}Props) {
   return (
     <div className={styles.container}>
-      {/* Your component JSX here */}
+      { /*  comments */ }
     </div>
   );
 };
 
-export default {{pascalCase name}};

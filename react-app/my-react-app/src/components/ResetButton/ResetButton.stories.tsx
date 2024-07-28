@@ -1,10 +1,10 @@
 import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
-import { {{pascalCase name}} } from './{{pascalCase name}}';
+import { ResetButton } from './ResetButton';
 
-const meta: Meta<typeof {{pascalCase name}}> = {
-  title: 'App/{{pascalCase name}}',
-  component: {{pascalCase name}},
+const meta: Meta<typeof ResetButton> = {
+  title: 'App/ResetButton',
+  component: ResetButton,
   parameters: {
     layout: 'centered',
   },
@@ -17,5 +17,7 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
- 
+ args:{
+  value:"RESET"
+ }
 };

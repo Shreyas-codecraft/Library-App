@@ -1,10 +1,10 @@
 import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
-import { {{pascalCase name}} } from './{{pascalCase name}}';
+import { TotalBillSection } from './TotalBillSection';
 
-const meta: Meta<typeof {{pascalCase name}}> = {
-  title: 'App/{{pascalCase name}}',
-  component: {{pascalCase name}},
+const meta: Meta<typeof TotalBillSection> = {
+  title: 'App/TotalBillSection',
+  component: TotalBillSection,
   parameters: {
     layout: 'centered',
   },

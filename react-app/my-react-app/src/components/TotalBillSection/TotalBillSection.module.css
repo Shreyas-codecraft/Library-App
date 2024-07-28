@@ -1,0 +1,19 @@
+.container { 
+    background-color:#00474B;
+    width: 566px;
+    height: 575px;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.btncontainer{
+    margin-top: auto;
+    padding:56px;
+}
+
+.tip{
+    padding: 56px;
+}
+

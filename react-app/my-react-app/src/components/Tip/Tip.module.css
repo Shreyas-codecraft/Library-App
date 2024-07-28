@@ -1,0 +1,17 @@
+.container { 
+    background-color:#00474B;
+    color: #FEFFFF;
+    width:  159px;
+    border-radius: 6px;
+    
+ }
+
+ .numberContainer{
+    font-family: "Space Mono";
+    font-weight: 700;
+    letter-spacing: 10%;
+    font-size: 2rem;
+    line-height: 1.5;
+    text-align: center;
+    padding: 8px;
+ }

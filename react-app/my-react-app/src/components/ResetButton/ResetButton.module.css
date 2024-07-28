@@ -1,0 +1,21 @@
+
+.container{
+    font-family: "Space Mono";
+    background-color: #0D686D;
+    border-radius: 7px;
+    width: 454px;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.textContainer{
+    padding: 13px 185px;
+    font-weight: 700;
+    font-size: 1.5rem;
+    line-height: 1.5;
+    letter-spacing: 0.088em;
+    color: #00474B;
+    text-align: center;
+}

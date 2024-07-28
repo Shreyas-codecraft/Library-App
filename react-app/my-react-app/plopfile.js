@@ -16,7 +16,7 @@ export default function (plop) {
       },
       {
         type: "add",
-        path: "src/components/{{pascalCase name}}/{{pascalCase name}}.css",
+        path: "src/components/{{pascalCase name}}/{{pascalCase name}}.module.css",
         templateFile: "plop-templates/Component.module.css.hbs",
       },
       {

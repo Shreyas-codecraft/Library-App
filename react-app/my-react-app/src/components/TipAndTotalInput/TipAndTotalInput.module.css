@@ -1,0 +1,38 @@
+.container {
+    font-family: "Space Mono";
+    background-color:#00474B;
+    width: 454px;
+    display: flex; 
+    align-items: center; 
+    justify-content: space-between;
+}
+
+.label {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    letter-spacing: 0.093em;
+    font-size:20px ;
+    font-weight: 400;
+    
+}
+
+.label span:first-child {
+    color: #FEFFFF;
+    margin-bottom: 1px;
+
+}
+
+.label span:last-child {
+    color: #9FB3B2;
+    margin-top: 1px;
+
+}
+
+.value {
+    font-weight: 700;
+    font-size: 3rem;
+    line-height: 1.5;
+    color: #2CC0AD; 
+ 
+}
