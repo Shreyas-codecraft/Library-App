@@ -1,10 +1,27 @@
-.container { 
-    font-family: "Space Mono";
-    background-color:white; 
+.container {
+    font-family: "Space Mono", monospace;
+    background-color: white;
     width: 524px;
-}
-
-.numberInput{
+    padding: 16px;
+    box-sizing: border-box;
+  }
+  
+  .label {
+    font-size: 1.25rem;
+    font-weight: 700;
+    line-height: 1.5;
+    color: #5d6b6c;
+    letter-spacing: 0.1em;
+  }
+  
+  .parent {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+  }
+  
+  .numberInput {
     font-size: 2rem;
     font-weight: 700;
     line-height: 1.4;
@@ -12,16 +29,20 @@
     text-align: right;
     width: 100%;
     margin-top: 12px;
-    background-color:#F3F8FB;
+    background-color: #f3f8fb;
     border-radius: 6px;
     border: none;
-    
-}
-
-.label{
-    font-size: 1.25rem;
-    font-weight: 700;    ;
-    line-height: 1.5;
-    color: #5D6B6C;
-    letter-spacing: 0.1em;
-}
+    outline: none;
+  }
+  
+  .icon {
+    position: absolute;
+    /* left: 10px; */
+    top: 50%;
+    right:89%;
+    padding:8px 20px;
+    /* transform: translateY(-50%); */
+        /* width: 24px; */
+    /* height: 24px; */
+  }
+  

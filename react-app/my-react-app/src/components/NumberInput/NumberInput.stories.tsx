@@ -1,6 +1,7 @@
 import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 import { NumberInput } from './NumberInput';
+import person from "../../assets/personLogo.svg"
 
 const meta: Meta<typeof NumberInput> = {
   title: 'App/NumberInput',
@@ -15,10 +16,18 @@ export default meta;
 
 type Story = StoryObj<typeof meta>;
 
-export const Default: Story = {
+export const Dollar: Story = {
   args: {
     value: 10,
     label:"Bill",
-    typeOfIcon:"$"
+    typeOfIcon:"person"
+  },
+};
+
+export const Person: Story = {
+  args: {
+    value: 10,
+    label:"Bill",
+    typeOfIcon:"dollar"
   },
 };
