@@ -1,17 +1,69 @@
-.container { 
+.tipbtn { 
     background-color:#00474B;
     color: #FEFFFF;
-    width:  159px;
+    /* width:  159px; */
     border-radius: 6px;
-    
- }
-
- .numberContainer{
     font-family: "Space Mono";
     font-weight: 700;
-    letter-spacing: 10%;
-    font-size: 2rem;
-    line-height: 1.5;
+    letter-spacing: 0.1em;
+    font-size: 2rem ;
+    line-height: 1.84;
     text-align: center;
-    padding: 8px;
+    /* padding: 8px; */
+    border: none;
  }
+
+ .customBtn {
+    background-color: #f3f8fb;
+    color: #00474b;
+    /* width:  159px; */
+    border-radius: 6px;
+    font-family: "Space Mono";
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    font-size: 2rem ;
+    line-height: 1.84;
+    text-align: center;
+    /* padding: 8px; */
+    border: none;
+  }
+
+  .input{
+    background-color: #F3F8FB;
+    color: #084643;
+    border-radius: 6px;
+    font-family: "Space Mono";
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    font-size: 1.5rem ;
+    line-height: 0;
+    text-align: center;
+    width: 100%;
+    border: none;
+    height: 100%;
+    outline: none; 
+  }
+
+  .error{
+    color:#00474B
+  }
+
+  button.selected{
+    background-color: #26c2ad;
+    color: #00484c;
+    border:none;
+  }
+
+  @media (max-width:550px){
+    .customBtn{
+        font-size: 1.5rem ;
+        border-radius: 4px;
+
+        width: 147px;
+    }
+    .tipbtn{
+        font-size: 1.5rem;
+        border-radius: 4px;
+        /* width: 147px; */
+    }
+  }

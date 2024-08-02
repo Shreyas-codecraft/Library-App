@@ -16,18 +16,11 @@ export default meta;
 
 type Story = StoryObj<typeof meta>;
 
-export const Dollar: Story = {
+export const Default: Story = {
   args: {
-    value: 10,
     label:"Bill",
     typeOfIcon:"person"
   },
 };
 
-export const Person: Story = {
-  args: {
-    value: 10,
-    label:"Bill",
-    typeOfIcon:"dollar"
-  },
-};
+

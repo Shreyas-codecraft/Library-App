@@ -1,0 +1,22 @@
+.container { 
+    background-color:white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap:67px;
+    width: 635px;
+    height: 1158px;
+ }
+
+ @media (max-width:550px){
+
+    .container{
+        height: 929px;
+        width: 375px;
+        flex-direction: column;
+        gap: 32px;
+        border-radius: 20px, 20px, 0px, 0px;
+        height: 820px;
+        width: 375px;
+    }
+ }

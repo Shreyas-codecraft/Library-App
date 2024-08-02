@@ -1,48 +1,82 @@
 .container {
-    font-family: "Space Mono", monospace;
+    font-family: "Space Mono";
     background-color: white;
     width: 524px;
-    padding: 16px;
-    box-sizing: border-box;
   }
   
   .label {
     font-size: 1.25rem;
     font-weight: 700;
-    line-height: 1.5;
+    line-height: 1.5rem;
     color: #5d6b6c;
     letter-spacing: 0.1em;
-  }
-  
-  .parent {
-    position: relative;
-    display: flex;
-    align-items: center;
-    width: 100%;
   }
   
   .numberInput {
     font-size: 2rem;
     font-weight: 700;
-    line-height: 1.4;
+    line-height: 1.5;
     padding: 8px 20px;
     text-align: right;
     width: 100%;
-    margin-top: 12px;
-    background-color: #f3f8fb;
     border-radius: 6px;
     border: none;
     outline: none;
+    background-color: inherit;
+    color: #084643;
+  }
+
+  .icon{
+    padding: 8px 20px;
   }
   
-  .icon {
-    position: absolute;
-    /* left: 10px; */
-    top: 50%;
-    right:89%;
-    padding:8px 20px;
-    /* transform: translateY(-50%); */
-        /* width: 24px; */
-    /* height: 24px; */
+  .parent{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    background-color: #f3f8fb;
+    margin-top: 12px;
+    border-radius: 6px; 
+  }
+
+  .parent > input::placeholder {
+    color: #9FB3B2;
+}
+
+.parent:focus-within{
+  outline: 2px solid #5AA79D;
+}
+
+.error{
+  color: #d6765d;
+  font-size: 1.25rem;
+    font-weight: 700;
+    line-height: 1.5;
+    letter-spacing: 0.1em; 
+    margin-top: 12px;
+    min-height: 30px;
+}
+
+@media (max-width:550px){
+  .container{
+    width: 310px;
   }
   
+  .label{
+    font-size: 0.875rem;
+  }
+  .numberInput{
+    font-size: 1.5rem;
+  }
+  .parent{
+    margin-top: 8px;
+  }
+
+.error{
+  font-size: 0.875rem;
+  min-height: 21px;
+}
+.icon{
+  width: 19%;
+}
+}

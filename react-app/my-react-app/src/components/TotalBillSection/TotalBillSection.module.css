@@ -1,11 +1,19 @@
 .container { 
     background-color:#00474B;
-    width: 566px;
+    /* width: 566px; */
     height: 575px;
     border-radius: 16px;
     display: flex;
     align-items: center;
     flex-direction: column;
+    justify-content: space-between;
+    /* width: 100%;
+    height: 100%; */
+    padding: 56px;
+}
+
+.parent{
+    width: 100%;
 }
 
 .btncontainer{
@@ -13,7 +21,18 @@
     padding:56px;
 }
 
-.tip{
-    padding: 56px;
+@media (max-width:550px){
+.container{
+    padding: 16px;
+    /* height: 257px; */
+}
+
+    .btncontainer{
+        padding: 16px;
+    }
+
+    .tip{
+        padding: 16px;
+    }
 }
 

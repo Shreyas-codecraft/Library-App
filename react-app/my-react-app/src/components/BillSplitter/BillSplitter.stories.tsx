@@ -1,10 +1,10 @@
 import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
-import { Tip } from './Tip';
+import { BillSplitter } from './BillSplitter';
 
-const meta: Meta<typeof Tip> = {
-  title: 'App/Tip',
-  component: Tip,
+const meta: Meta<typeof BillSplitter> = {
+  title: 'App/BillSplitter',
+  component: BillSplitter,
   parameters: {
     layout: 'centered',
   },
@@ -17,14 +17,5 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
- args:{
-  value:5
- }
-};
-
-export const Custom: Story = {
-  args:{
-   value:"custom"
-  }
- };
  
+};

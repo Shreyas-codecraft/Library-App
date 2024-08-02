@@ -1,10 +1,12 @@
 .container {
     font-family: "Space Mono";
     background-color:#00474B;
-    width: 454px;
+    /* width: 454px;    */
+    width: 100%;
     display: flex; 
-    align-items: center; 
-    justify-content: space-between;
+    justify-content: space-between; 
+    margin-bottom: 64px;
+
 }
 
 .label {
@@ -14,7 +16,7 @@
     letter-spacing: 0.093em;
     font-size:20px ;
     font-weight: 400;
-    
+    line-height: 1.5;
 }
 
 .label span:first-child {
@@ -34,5 +36,28 @@
     font-size: 3rem;
     line-height: 1.5;
     color: #2CC0AD; 
- 
+}
+
+@media (max-width:550px){
+    
+    .container{
+        margin-bottom: 24px;
+
+    }
+
+    .label{
+        font-size: 0.765rem;
+    }
+
+    .label span:first-child {
+        margin-bottom: 1px;
+    }
+    
+    .label span:last-child {
+        margin-top: 1px;
+    }
+
+    .value{
+        font-size: 1.83rem;
+    }
 }

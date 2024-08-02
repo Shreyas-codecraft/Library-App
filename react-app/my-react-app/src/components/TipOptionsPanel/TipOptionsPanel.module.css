@@ -1,0 +1,41 @@
+.container { 
+    background-color:white;
+    width: 525px;
+    /* width: 100%; */
+    /* border-radius: 6px; */
+ }
+
+ .tipOptionsText{
+    font-family: "Space Mono";
+    font-weight: 700;
+    font-size: 1.25rem;
+    line-height: 1.5;
+    letter-spacing: 0.1em;
+    color: #5D6B6C;
+    margin-bottom: 24px;
+ }
+
+ .parent{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap:24px;
+    width: 100%;
+ }
+
+
+ @media (max-width:550px){
+   .parent{
+      gap: 16px;
+   }
+   .container{
+      width: 310px;
+   }
+   .parent{
+      grid-template-columns: 1fr 1fr;
+   }
+   .tipOptionsText{
+      font-size: 0.875rem;
+      margin-bottom: 16px;
+
+   }
+ }

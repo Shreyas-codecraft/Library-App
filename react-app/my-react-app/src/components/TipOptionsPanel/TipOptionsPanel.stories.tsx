@@ -1,15 +1,14 @@
 import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
-import { Tip } from './Tip';
+import { TipOptionsPanel } from './TipOptionsPanel';
 
-const meta: Meta<typeof Tip> = {
-  title: 'App/Tip',
-  component: Tip,
+const meta: Meta<typeof TipOptionsPanel> = {
+  title: 'App/TipOptionsPanel',
+  component: TipOptionsPanel,
   parameters: {
     layout: 'centered',
   },
   tags: ['autodocs'],
-  
 };
 
 export default meta;
@@ -17,14 +16,8 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
- args:{
-  value:5
- }
-};
-
-export const Custom: Story = {
   args:{
-   value:"custom"
+    chooseTipText:"Select Tip %"
   }
- };
  
+};

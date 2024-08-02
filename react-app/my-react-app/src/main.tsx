@@ -1,9 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App.tsx";
-import "./index.css";
+// import "./index.css";
 import { Widget } from "./widget.tsx";
-import { Counter } from "./components/counter-button/counter.tsx";
+import { BillSplitter} from "./components/BillSplitter/BillSplitter.tsx";
+import { NumberInput } from "./components/NumberInput/NumberInput.tsx";
 
 // const person = "john";
 // const greeting = (
@@ -80,13 +81,11 @@ const component = (
   </div>
 );
 
-const counter = (
-  <div>
-    <Counter></Counter>
-  </div>
-);
+
+
+const Bill_splitter = (<BillSplitter></BillSplitter>)
 
 // ReactDOM.createRoot(document.getElementById("root")!).render(fun);
 
-ReactDOM.createRoot(document.getElementById("root")!).render(counter);
+ReactDOM.createRoot(document.getElementById("root")!).render(Bill_splitter);
 // ReactDOM.createRoot(document.getElementById("root")!).render(counter);
