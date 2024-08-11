@@ -1,5 +1,39 @@
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+
+/* .container{ */
+  /* width: 100%; */
+  /* max-width: 1280px;
+  max-height: 697px;  */
+ /* border: 2px solid black; */
+  /* display: flex; 
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  background-color: white;  
+  border-radius: 20px;
+}  */
+/* 
+ #root {
+  display: flex;
+  justify-content: center; 
+  align-items: center;    
+  height: 100vh;  
+
+  display: flex;
+  justify-content: center;
+  align-items: center; */
+  /* background-color: #c5e4e7; */
+  /* width:100%;   */
+  /* width:1440px;
+  height:1024px;    */
+/* }  */
+
+/* body{
+  width: 100%;
+} */
+/* */ 
+
+ /*:root {
+  /* font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
@@ -10,13 +44,16 @@
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-
+  -moz-osx-font-smoothing: grayscale; */
+  /* width: 1440px;
+  height: 1024px  ;
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
+  background-color: #c5e4e7;
+  width:100% */
+/* } */
+/*
 a {
   font-weight: 500;
   color: #646cff;
@@ -69,4 +106,4 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
-}
+} */

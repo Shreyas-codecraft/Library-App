@@ -1,26 +1,48 @@
-import React from 'react';
-import styles from './TotalBillSection.module.css'
-import "../../App.css"
-import { TipAndTotalInput } from '../TipAndTotalInput/TipAndTotalInput';
-import { ResetButton } from '../ResetButton/ResetButton';
+import styles from "./TotalBillSection.module.css";
+import "../../App.css";
+import { TipAndTotalInput } from "../TipAndTotalInput/TipAndTotalInput";
+import { ResetButton } from "../ResetButton/ResetButton";
+import { Action, State } from "../../bill_model";
 
 interface TotalBillSectionProps {
-  billAmount:string
-  selected:number
-  noOfPeople:number
+  state: State;
+  dispatch: React.Dispatch<Action>;
 }
 
-
-export function TotalBillSection(props:TotalBillSectionProps) {
-  const tipAmount = (props.selected/100)*(Number(props.billAmount))/props.noOfPeople
-  const totalAmountPerPerson = ((Number(props.billAmount))+Number(props.selected))/props.noOfPeople;
+export function TotalBillSection(props: TotalBillSectionProps) {
+  const billAmount = props.state.bill;
+  const noOfPeople = props.state.person;
+  const tipAmount =
+    ((Number(props.state.selected) / 100) * Number(billAmount)) / Number(noOfPeople);
+  const totalAmountPerPerson =
+    (Number(billAmount) + Number(props.state.selected)) / Number(noOfPeople);
 
   return (
     <div className={styles.container}>
-      <div className={styles.parent}><TipAndTotalInput label='Tip Amount' value={isNaN(tipAmount) || Number(totalAmountPerPerson)===Infinity ? "0.00" : tipAmount.toFixed(2)}></TipAndTotalInput>
-      <TipAndTotalInput label='Total' value={isNaN(Number(totalAmountPerPerson)) || Number(totalAmountPerPerson)===Infinity ? "0.00" : totalAmountPerPerson.toFixed(2)}></TipAndTotalInput></div> 
-      <ResetButton value='RESET'></ResetButton>
+      <div className={styles.parent}>
+        <TipAndTotalInput
+          label="Tip Amount"
+          value={
+            isNaN(tipAmount) || !isFinite(Number(totalAmountPerPerson))
+              ? "0.00"
+              : tipAmount.toFixed(2)
+          }
+        ></TipAndTotalInput>
+        <TipAndTotalInput
+          label="Total"
+          value={
+            isNaN(Number(totalAmountPerPerson)) ||
+            !isFinite(Number(totalAmountPerPerson))
+              ? "0.00"
+              : totalAmountPerPerson.toFixed(2)
+          }
+        ></TipAndTotalInput>
+      </div>
+      <ResetButton
+        state={props.state}
+        dispatch={props.dispatch}
+        value="RESET"
+      ></ResetButton>
     </div>
   );
-} 
-
+}

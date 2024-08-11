@@ -1,29 +1,44 @@
+:root {
+    --inactive-resetbtn-bg-color: #0D686D;
+    --active-resetbtn-bg-color: #9fe8df;
+    --resetbtn-text-color: #00474B;
+  }
 
 .container{
     font-family: "Space Mono";
-    background-color: #0D686D;
+    background-color: var(--inactive-resetbtn-bg-color);
     border-radius: 7px;
-    /* width: 454px; */
     width: 100%;
     border: none;
     display: flex;
     justify-content: center;
     align-items: center;
+    /* max-width: 480px; */
 }
 
 .textContainer{
-    padding: 13px 185px;
+    padding: 13px 0px;    
     font-weight: 700;
     font-size: 1.5rem;
     line-height: 1.5;
     letter-spacing: 0.088em;
-    color: #00474B;
+    color: var(--resetbtn-text-color);
     text-align: center;
+}
+
+.active{
+    background-color: var(--active-resetbtn-bg-color);
 }
 
 @media (max-width:550px){
 .textContainer{
-    padding: 9px 105px;
+    /* padding: 9px 105px; */
     font-size: 1.25rem;
+}
+}
+
+@media (max-width:1100px){
+.textContainer{
+    font-size: 1.38rem;
 }
 }

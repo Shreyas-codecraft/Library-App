@@ -1,66 +1,58 @@
-// Tip.tsx
-import React, { SetStateAction, useState } from 'react';
-import styles from './Tip.module.css';
+import React, { forwardRef } from "react";
+import styles from "./Tip.module.css";
+import { Action, State } from "../../bill_model";
 
 interface TipProps {
+  state: State;
+  dispatch: React.Dispatch<Action>;
   value: number | string;
   onClick: () => void;
   isSelected: boolean;
-  selected:string|number
-  setSelected: React.Dispatch<SetStateAction<string | number>>;
-  isEditing:boolean;
-  setIsEditing:React.Dispatch<React.SetStateAction<boolean>>
-  inputValue:string
-  setInputValue:React.Dispatch<React.SetStateAction<string>>
-  custumValue:string;
-  setCustumValue: React.Dispatch<React.SetStateAction<string>>
+  tipValues: unknown[];
 }
 
-export function Tip({ value, onClick, isSelected , isEditing, setIsEditing, inputValue, setInputValue, custumValue, setCustumValue, setSelected}: TipProps) {
-  // const [isEditing, setIsEditing] = useState(false);
-  // const [inputValue, setInputValue] = useState('');
-  const handleClick = () => {
-    if (value === "custom") {
-      setIsEditing(true);
-    } else {
+export const Tip = (
+  ({ state, dispatch, value, onClick, isSelected, tipValues }:TipProps) => {
+    const handleClick = () => {
       onClick();
-    }
-  };
+    };
 
-  const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setInputValue(event.target.value);
-  };
+    const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+      if (!state.selected) {
+        console.log("===>")
 
-  const handleBlur = (e) => {
-    // if (inputValue && !inputValue.includes("%")) {
-    //   setInputValue(inputValue + "%");
-    //   setIsEditing(false);
-    // }
-    // setIsEditing(false);
-    setCustumValue(e.target.value);
-    console.log(e.target.value)
-    setSelected(custumValue)
-    handleBlur
-  };
+        dispatch({ type: "CUSTOM", value: false });
+      }
+      dispatch({ type: "SET_SELECTED", value: e.target.value });
+    };
 
-  return (
-    <>
-      {isEditing && value === "custom" ? (
-        <input
-          className={styles.input}
-          value={inputValue}
-          onChange={handleInputChange}
-          onBlur={handleBlur}
-          autoFocus
-        />
-      ) : (
-        <button
-          className={`${value === 'custom' ? styles.customBtn : styles.tipbtn} ${isSelected ? styles.selected : ''}`}
-          onClick={handleClick}
-        >
-          {value === 'custom' ? 'Custom' : `${value}%`}
-        </button>
-      )}
-    </>
-  );
-}
+    const handleBlur = (e: React.FocusEvent<HTMLInputElement>) => {
+      if (!e.target.value) {
+        dispatch({ type: "CUSTOM", value: false });
+      }
+      dispatch({ type: "SET_SELECTED", value: e.target.value });
+    };
+
+    return (
+      <>
+        {value === "custom" && state.customIsInput ? (
+          <input
+            type="number"
+            className={styles.input}
+            value={state.selected}
+            onChange={handleInputChange}
+            onBlur={handleBlur}
+            autoFocus
+          />
+        ) : (
+          <button
+            className={`${value === "custom" ? styles.customBtn : styles.tipbtn} ${isSelected ? styles.selected : ""}`}
+            onClick={handleClick}
+          >
+            {value === "custom" ? "Custom" : `${value}%`}
+          </button>
+        )}
+      </>
+    );
+  }
+);

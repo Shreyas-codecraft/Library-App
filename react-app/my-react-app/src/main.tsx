@@ -1,10 +1,12 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App.tsx";
-// import "./index.css";
+import "./index.css";
 import { Widget } from "./widget.tsx";
 import { BillSplitter} from "./components/BillSplitter/BillSplitter.tsx";
 import { NumberInput } from "./components/NumberInput/NumberInput.tsx";
+import "./App.css"
+import { FinalForm } from "./components/FinalForm/FinalForm.tsx";
 
 // const person = "john";
 // const greeting = (
@@ -79,11 +81,9 @@ const component = (
       excepturi, suscipit earum repudiandae!
     </Widget>
   </div>
-);
+);  
 
-
-
-const Bill_splitter = (<BillSplitter></BillSplitter>)
+const Bill_splitter = (<FinalForm></FinalForm>)
 
 // ReactDOM.createRoot(document.getElementById("root")!).render(fun);
 
