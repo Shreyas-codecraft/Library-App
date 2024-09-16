@@ -7,23 +7,27 @@ interface ResetButtonProps {
   state: State;
   dispatch: React.Dispatch<Action>;
   value: string;
+  customIsInput: boolean;
+  setcustomIsInput: React.Dispatch<React.SetStateAction<boolean>>;
 }
 export function ResetButton({
   value,
   state,
   dispatch,
+  customIsInput,
+  setcustomIsInput,
 }: ResetButtonProps) {
-  
   const [resetIsActive, setResetIsActive] = useState(false);
   const handleOnClick = (e) => {
-    dispatch({type:"RESET"})
+    dispatch({ type: "RESET" });
+    setcustomIsInput(false)
   };
 
   useEffect(() => {
     if (state.selected || state.bill || state.person) {
-      setResetIsActive(true) 
-       } else {
-      setResetIsActive(false)
+      setResetIsActive(true);
+    } else {
+      setResetIsActive(false);
     }
   }, [state.selected, state.bill, state.person, dispatch]);
   return (

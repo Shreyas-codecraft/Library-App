@@ -9,10 +9,12 @@ interface TipProps {
   onClick: () => void;
   isSelected: boolean;
   tipValues: unknown[];
+  customIsInput:boolean
+  setcustomIsInput:React.Dispatch<React.SetStateAction<boolean>>
 }
 
 export const Tip = (
-  ({ state, dispatch, value, onClick, isSelected, tipValues }:TipProps) => {
+  ({ state, dispatch, value, onClick, isSelected, tipValues,customIsInput,setcustomIsInput }:TipProps) => {
     const handleClick = () => {
       onClick();
     };
@@ -21,21 +23,24 @@ export const Tip = (
       if (!state.selected) {
         console.log("===>")
 
-        dispatch({ type: "CUSTOM", value: false });
+        // dispatch({ type: "CUSTOM", value: false });
+        setcustomIsInput(false)
+
       }
       dispatch({ type: "SET_SELECTED", value: e.target.value });
     };
 
     const handleBlur = (e: React.FocusEvent<HTMLInputElement>) => {
       if (!e.target.value) {
-        dispatch({ type: "CUSTOM", value: false });
+        // dispatch({ type: "CUSTOM", value: false });
+        setcustomIsInput(false)
       }
       dispatch({ type: "SET_SELECTED", value: e.target.value });
     };
 
     return (
       <>
-        {value === "custom" && state.customIsInput ? (
+        {value === "custom" && customIsInput ? (
           <input
             type="number"
             className={styles.input}

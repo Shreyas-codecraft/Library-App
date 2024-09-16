@@ -7,6 +7,8 @@ import { Action, State } from "../../bill_model";
 interface TotalBillSectionProps {
   state: State;
   dispatch: React.Dispatch<Action>;
+  customIsInput:boolean
+  setcustomIsInput:React.Dispatch<React.SetStateAction<boolean>>
 }
 
 export function TotalBillSection(props: TotalBillSectionProps) {
@@ -42,6 +44,8 @@ export function TotalBillSection(props: TotalBillSectionProps) {
         state={props.state}
         dispatch={props.dispatch}
         value="RESET"
+        customIsInput={props.customIsInput}
+        setcustomIsInput={props.setcustomIsInput}
       ></ResetButton>
     </div>
   );

@@ -2,7 +2,7 @@ import styles from "./BillSplitter.module.css";
 import "../../App.css";
 import { FirstHalf } from "../FirstHalf/FirstHalf";
 import { TotalBillSection } from "../TotalBillSection/TotalBillSection";
-import { useReducer } from "react";
+import { useReducer, useState } from "react";
 import { State, Action } from "../../bill_model";
 
 // interface BillSplitterProps {}
@@ -11,7 +11,6 @@ const initialState: State = {
   bill: "",
   person: "",
   selected: "",
-  customIsInput:false
 };
 
 function reducer(state: State, action: Action): State {
@@ -26,22 +25,19 @@ function reducer(state: State, action: Action): State {
         ...state,
         selected: action.value,
       };
-    case "CUSTOM":
-      return{
-        ...state,
-        customIsInput:action.value
-      }
       case "RESET":
         return initialState
   }
 }
 
 export function BillSplitter() {
+  const [customIsInput,setcustomIsInput]=useState(false)
+
   const [state, dispatch] = useReducer(reducer, initialState);
   return (
     <div className={styles.container}>
-      <FirstHalf state={state} dispatch={dispatch} />
-      <TotalBillSection state={state} dispatch={dispatch} />
+      <FirstHalf state={state} dispatch={dispatch} customIsInput={customIsInput} setcustomIsInput={setcustomIsInput}/>
+      <TotalBillSection state={state} dispatch={dispatch} customIsInput={customIsInput} setcustomIsInput={setcustomIsInput} />
     </div>
   );
 }

@@ -8,12 +8,14 @@ import { Action, State } from "../../bill_model";
 export interface FirstHalfProps {
   state: State;
   dispatch: React.Dispatch<Action>;
+  customIsInput:boolean
+  setcustomIsInput:React.Dispatch<React.SetStateAction<boolean>>
 }
 const errorMsg = {bill:"",person:""};
 
 export function FirstHalf({
   state,
-  dispatch,
+  dispatch,customIsInput,setcustomIsInput
 }: FirstHalfProps) {
 
   const validateNumber = (value: string): string => {
@@ -39,6 +41,8 @@ export function FirstHalf({
         chooseTipText="Select Tip %"
         state={state}
         dispatch={dispatch}
+        customIsInput={customIsInput}
+        setcustomIsInput={setcustomIsInput}
       />
       <NumberInput
         label="Number of people"

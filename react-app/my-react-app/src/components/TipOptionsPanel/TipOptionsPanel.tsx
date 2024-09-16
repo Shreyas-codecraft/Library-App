@@ -8,6 +8,8 @@ interface TipOptionsPanelProps {
   chooseTipText: string;
   state: State;
   dispatch: React.Dispatch<Action>;
+  customIsInput:boolean
+  setcustomIsInput:React.Dispatch<React.SetStateAction<boolean>>
 }
 
 export function TipOptionsPanel(props: TipOptionsPanelProps) {
@@ -58,6 +60,8 @@ export function TipOptionsPanel(props: TipOptionsPanelProps) {
             onClick={() => handleTipSelection(value)}
             isSelected={props.state.selected === JSON.stringify(value)}
             tipValues={tipValues}
+            customIsInput={props.customIsInput}
+            setcustomIsInput={props.setcustomIsInput}
           />
         ))}
       </div>
